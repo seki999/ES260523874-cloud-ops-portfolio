@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - name: Python tests
+        run: |
+          python -m pip install -r worker-python/requirements.txt
+          python -m pytest worker-python/tests
+      - name: Java compile and service test
+        run: |
+          find backend-java/src/main/java backend-java/src/test/java -name "*.java" > sources.txt
+          javac -encoding UTF-8 -d backend-java/out @sources.txt
+          java -cp backend-java/out com.es260523874.cloudops.RequestServiceTest
+      - name: Screenshot generator smoke check
+        run: |
+          npm ci
+          npm run screenshots
+

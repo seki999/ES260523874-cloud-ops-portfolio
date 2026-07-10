@@ -1,0 +1,18 @@
+[
+  {
+    "requestId": "REQ-001",
+    "projectName": "neutral-research-platform",
+    "resourceType": "ECS",
+    "environment": "dev",
+    "status": "PENDING",
+    "requestedBy": "platform-user"
+  },
+  {
+    "requestId": "REQ-002",
+    "projectName": "internal-automation-hub",
+    "resourceType": "S3",
+    "environment": "stg",
+    "status": "APPROVED",
+    "requestedBy": "ops-user"
+  }
+]

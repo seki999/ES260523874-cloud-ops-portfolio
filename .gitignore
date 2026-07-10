@@ -1,0 +1,17 @@
+.env
+*.log
+target/
+build/
+out/
+node_modules/
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+dist/
+coverage/
+

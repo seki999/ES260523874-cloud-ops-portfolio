@@ -1,0 +1,11 @@
+project: ES260523874-cloud-ops-portfolio
+region: ap-northeast-1
+mode: mock
+services:
+  api_gateway: local Java API endpoint
+  ecs: docker compose service
+  s3: local logs directory
+  rds: in-memory repository for local verification
+  cloudwatch: JSONL worker log
+  iam: documented least-privilege policy only
+

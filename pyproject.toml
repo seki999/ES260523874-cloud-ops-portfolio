@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+testpaths = ["worker-python/tests"]
+pythonpath = ["worker-python"]
+

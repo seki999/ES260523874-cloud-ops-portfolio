@@ -1,0 +1,12 @@
+{
+  "name": "es260523874-cloud-ops-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "screenshots": "playwright install chromium && node scripts/generate-screenshots.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
+
