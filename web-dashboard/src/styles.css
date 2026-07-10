@@ -6,7 +6,8 @@
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
+body { margin: 0; min-height: 100vh; }
+#app { display: grid; grid-template-columns: 248px 1fr; min-height: 100vh; }
 aside { background: #111827; color: #f8fafc; padding: 28px 22px; }
 aside strong { display: block; font-size: 20px; margin-bottom: 28px; }
 nav { display: grid; gap: 10px; }
@@ -40,10 +41,9 @@ ol { margin: 0; padding-left: 22px; line-height: 1.9; }
 .logs p { margin: 8px 0; }
 
 @media (max-width: 860px) {
-  body { grid-template-columns: 1fr; }
+  #app { grid-template-columns: 1fr; }
   aside { position: static; }
   .hero { align-items: flex-start; gap: 16px; flex-direction: column; }
   h1 { font-size: 30px; }
   .metrics, .grid { grid-template-columns: 1fr; }
 }
-

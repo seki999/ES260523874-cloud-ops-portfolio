@@ -5,7 +5,6 @@ services:
   api_gateway: local Java API endpoint
   ecs: docker compose service
   s3: local logs directory
-  rds: in-memory repository for local verification
+  rds: docker mysql for local persistence
   cloudwatch: JSONL worker log
   iam: documented least-privilege policy only
-

@@ -4,81 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ES260523874 Cloud Ops Portfolio</title>
-    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <aside>
-      <strong>ES260523874</strong>
-      <nav>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#requests">Requests</a>
-        <a href="#batch">Batch</a>
-        <a href="#logs">Logs</a>
-      </nav>
-    </aside>
-    <main>
-      <section id="dashboard" class="hero">
-        <div>
-          <p class="eyebrow">研究開発向けクラウド運用管理ポータル</p>
-          <h1>Cloud resource request and DevOps operations dashboard</h1>
-        </div>
-        <div class="status-pill">API: UP / Worker: Ready / AWS: Mock</div>
-      </section>
-
-      <section class="metrics">
-        <article><span>申請件数</span><strong>18</strong><small>今週 +4</small></article>
-        <article><span>自動化成功率</span><strong>96%</strong><small>mock worker</small></article>
-        <article><span>API latency</span><strong>42ms</strong><small>local</small></article>
-        <article><span>未処理</span><strong>3</strong><small>PENDING</small></article>
-      </section>
-
-      <section id="requests" class="panel">
-        <div class="section-title">
-          <h2>クラウドリソース申請一覧</h2>
-          <button>New Request</button>
-        </div>
-        <table>
-          <thead>
-            <tr><th>ID</th><th>Project</th><th>Type</th><th>Env</th><th>Status</th><th>Requested by</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>REQ-001</td><td>neutral-research-platform</td><td>ECS</td><td>dev</td><td><b class="pending">PENDING</b></td><td>platform-user</td></tr>
-            <tr><td>REQ-002</td><td>internal-automation-hub</td><td>S3</td><td>stg</td><td><b class="ok">APPROVED</b></td><td>ops-user</td></tr>
-            <tr><td>REQ-003</td><td>api-observability-lab</td><td>RDS</td><td>prod-like</td><td><b class="run">RUNNING</b></td><td>devops-user</td></tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section class="grid">
-        <article class="panel detail">
-          <h2>申請詳細 / API Result</h2>
-          <pre>{
-  "requestId": "REQ-001",
-  "resourceType": "ECS",
-  "environment": "dev",
-  "status": "PENDING"
-}</pre>
-        </article>
-        <article id="batch" class="panel">
-          <h2>Python batch execution</h2>
-          <ol>
-            <li>PENDING 申請を取得</li>
-            <li>AWS 構築処理を mock 実行</li>
-            <li>COMPLETED へステータス更新</li>
-          </ol>
-          <div class="progress"><span></span></div>
-        </article>
-      </section>
-
-      <section id="logs" class="panel">
-        <h2>監視 / 実行ログ</h2>
-        <div class="logs">
-          <p>2026-07-10T09:00:00Z health check passed: /api/health</p>
-          <p>2026-07-10T09:00:03Z worker processed REQ-001 as COMPLETED</p>
-          <p>2026-07-10T09:00:05Z CloudWatch-style metric emitted: provisioning_success=1</p>
-        </div>
-      </section>
-    </main>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-

@@ -31,5 +31,5 @@ jobs:
       - name: Screenshot generator smoke check
         run: |
           npm ci
+          npm run build
           npm run screenshots
-

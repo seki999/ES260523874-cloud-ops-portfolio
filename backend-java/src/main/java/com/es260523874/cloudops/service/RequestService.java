@@ -1,7 +1,7 @@
 package com.es260523874.cloudops.service;
 
 import com.es260523874.cloudops.model.CloudResourceRequest;
-import com.es260523874.cloudops.repository.RequestRepository;
+import com.es260523874.cloudops.repository.CloudResourceRequestRepository;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -11,9 +11,9 @@ import java.util.UUID;
  * Controller から repository を直接触らないことで、詳細設計の責務分離を見せます。
  */
 public class RequestService {
-    private final RequestRepository repository;
+    private final CloudResourceRequestRepository repository;
 
-    public RequestService(RequestRepository repository) {
+    public RequestService(CloudResourceRequestRepository repository) {
         this.repository = repository;
     }
 
@@ -35,4 +35,3 @@ public class RequestService {
         return repository.updateStatus(requestId, status);
     }
 }
-

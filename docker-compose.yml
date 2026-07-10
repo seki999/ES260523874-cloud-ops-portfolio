@@ -1,4 +1,22 @@
 services:
+  mysql:
+    image: mysql:8.4
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: cloudops
+      MYSQL_USER: cloudops_user
+      MYSQL_PASSWORD: cloudops_password
+      MYSQL_ROOT_PASSWORD: root_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./infra/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u cloudops_user -pcloudops_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
   java-api:
     build:
       context: ./backend-java
@@ -6,6 +24,14 @@ services:
       - "8080:8080"
     environment:
       - API_PORT=8080
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_NAME=cloudops
+      - DB_USER=cloudops_user
+      - DB_PASSWORD=cloudops_password
+    depends_on:
+      mysql:
+        condition: service_healthy
 
   python-worker:
     build:
@@ -15,3 +41,6 @@ services:
     environment:
       - WORKER_API_URL=http://java-api:8080
       - LOG_LEVEL=INFO
+
+volumes:
+  mysql-data:
