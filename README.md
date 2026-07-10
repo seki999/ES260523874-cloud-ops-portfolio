@@ -2,11 +2,9 @@
 
 研究開発向けクラウド運用管理ポータルを題材にした GitHub portfolio project です。AWS クラウド設計、Java REST API、Python 自動化 worker、Docker、Shell、Git / DevOps、Jira / Confluence 風ドキュメント、基本設計からテストまでの流れを一つのリポジトリで確認できるようにしています。
 
-実在する会社名、顧客名、機関名、実業務名、credential、機密情報は含みません。AWS 関連機能は local mock、設定ファイル、設計ドキュメント、Terraform 例で表現しています。
-
 ## 対応 job 技術スタック
 
-案件に明示された技術: Java、Python、AWS、Git、Shell、Docker、RESTful API、Jira、Confluence、DevOps 環境設計、後端開発、基本設計、詳細設計、実装、テスト、設計書作成、仕様設計図作成、需求具体化。
+ Java、Python、AWS、Git、Shell、Docker、RESTful API、Jira、Confluence、DevOps 環境設計、後端開発、基本設計、詳細設計、実装、テスト、設計書作成、仕様設計図作成、需求具体化。
 
 ポートフォリオ完成度のために追加した技術: JDK 標準 HttpServer、Playwright、GitHub Actions、Terraform、静的 Web Dashboard。これらは原案件で明示指定されたものではなく、動作確認・CI・設計説明・スクリーンショット作成を補うために追加しています。
 
