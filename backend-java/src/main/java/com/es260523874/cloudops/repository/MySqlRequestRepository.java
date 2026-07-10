@@ -115,8 +115,10 @@ public class MySqlRequestRepository implements CloudResourceRequestRepository {
     }
 
     private void waitForDatabase() {
-        for (int attempt = 1; attempt <= 20; attempt++) {
-            try (Connection ignored = openConnection()) {
+        for (int attempt = 1; attempt <= 60; attempt++) {
+            try (Connection connection = openConnection();
+                 PreparedStatement statement = connection.prepareStatement("SELECT COUNT(*) FROM cloud_resource_requests");
+                 ResultSet ignored = statement.executeQuery()) {
                 return;
             } catch (SQLException e) {
                 try {

@@ -14,7 +14,7 @@ class ApiClient:
     """申請一覧取得とステータス更新だけに責務を絞った API client。"""
 
     base_url: str
-    retries: int = 8
+    retries: int = 30
     retry_interval_seconds: float = 1.0
 
     def list_requests(self) -> list[dict[str, Any]]:
