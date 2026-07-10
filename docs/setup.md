@@ -41,7 +41,7 @@ bash scripts/run-local.sh
 bash scripts/run-docker.sh
 ```
 
-起動後、MySQL は `localhost:3306`、database は `cloudops`、user は `cloudops_user` で利用できます。初期 table と seed data は `infra/mysql/init.sql` にあります。
+起動後、Vue.js dashboard は `http://127.0.0.1:5173` で利用できます。MySQL は `localhost:3306`、database は `cloudops`、user は `cloudops_user` で利用できます。初期 table と seed data は `infra/mysql/init.sql` にあります。
 
 停止:
 

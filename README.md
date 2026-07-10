@@ -75,7 +75,7 @@ bash scripts/run-docker.sh
 docker compose down
 ```
 
-Java API、Python worker、MySQL が Docker Compose で起動します。Vue.js dashboard は local frontend として `npm run dev` で起動します。MySQL の初期 schema と seed data は `infra/mysql/init.sql` で投入されます。
+Vue.js dashboard、Java API、Python worker、MySQL が Docker Compose で起動します。起動後、ブラウザで `http://127.0.0.1:5173` を開きます。MySQL の初期 schema と seed data は `infra/mysql/init.sql` で投入されます。
 
 ## テスト
 
